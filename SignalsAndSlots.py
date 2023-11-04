@@ -1,6 +1,6 @@
-from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QMainWindow, QPushButton, QApplication
-from PyQt5.QtCore import QSize
+from PyQt6.QtGui import QIcon
+from PyQt6.QtWidgets import QMainWindow, QPushButton, QApplication
+from PyQt6.QtCore import QSize
 import ctypes
 
 # This code makes it so windows doesn't think Pythonw.exe's icon should be used for this window's icon
@@ -49,4 +49,4 @@ app = QApplication([])  #initializing the application
 window = MainWindow()
 window.show()           #Windows are made invisible by default, need show func to show them
 
-app.exec_()             #executing the program
+app.exec()             #executing the program
