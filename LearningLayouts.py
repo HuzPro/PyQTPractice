@@ -23,21 +23,34 @@ class MainWindow(QMainWindow):
         self.setWindowIcon(QIcon("icons\\layout.png"))
         self.setMinimumSize(720,480)
 
-        layout = QVBoxLayout()
-        layout2 = QHBoxLayout()
+        layout = QHBoxLayout()
+        layout2 = QVBoxLayout()
+        layout3 = QVBoxLayout()
 
         redWidget = Color("#ff6767")
         greenWidget = Color("#54e95c")
         blueWidget = Color("#54bae9")
         purpleWidget = Color("#cb54e9")
-        
-        layout2.addWidget(redWidget) #light red
+        pinkWidget = Color("#e954b7")
+        orangeWidget = Color("#f0ad4b")
+
+        layout2.addWidget(redWidget)
         layout2.addWidget(greenWidget)
         layout2.addWidget(blueWidget)
-        layout2.addWidget(purpleWidget)
+        
+        layout.addLayout(layout2)
+
+        layout.addWidget(purpleWidget)
+
+        layout3.addWidget(pinkWidget)
+        layout3.addWidget(orangeWidget)
+
+        layout.addLayout(layout3)
+
+
 
         widget = QWidget()
-        widget.setLayout(layout2)
+        widget.setLayout(layout)
         
         self.setCentralWidget(widget)
 
