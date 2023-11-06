@@ -7,7 +7,6 @@ myappid = u'mycompany.myproduct.subproduct.version'
 windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 
 class Color(QWidget):
-
     def __init__(self, color):
         super(Color, self).__init__()
         self.setAutoFillBackground(True)
