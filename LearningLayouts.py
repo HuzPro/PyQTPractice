@@ -35,17 +35,19 @@ class MainWindow(QMainWindow):
         orangeWidget = Color("#f0ad4b")
 
         layout2.addWidget(redWidget)
-        layout2.addWidget(greenWidget)
+        layout2.addWidget(purpleWidget)
         layout2.addWidget(blueWidget)
         
         layout.addLayout(layout2)
 
-        layout.addWidget(purpleWidget)
+        layout.addWidget(greenWidget)
 
         layout3.addWidget(pinkWidget)
         layout3.addWidget(orangeWidget)
 
         layout.addLayout(layout3)
+        layout.setSpacing(0)
+        layout.setContentsMargins(0, 0, 0, 0)
 
 
 
