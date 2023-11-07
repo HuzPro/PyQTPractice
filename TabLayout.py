@@ -30,7 +30,7 @@ class MainWindow(QMainWindow):
 
         pageLayout.addLayout(buttonLayout)
         pageLayout.addLayout(self.stackLayout)
-
+        
         redButton = QPushButton("Red")
         redButton.pressed.connect(self.activateTab1)
         buttonLayout.addWidget(redButton)
@@ -41,10 +41,23 @@ class MainWindow(QMainWindow):
         buttonLayout.addWidget(greenButton)
         self.stackLayout.addWidget(Color("green"))
 
-        yellowButton = QPushButton("Yellow")
-        yellowButton.pressed.connect(self.activateTab3)
-        buttonLayout.addWidget(yellowButton)
-        self.stackLayout.addWidget(Color("yellow"))
+        blueButton = QPushButton("Blue")
+        blueButton.pressed.connect(self.activateTab3)
+        buttonLayout.addWidget(blueButton)
+        self.stackLayout.addWidget(Color("blue"))
+
+        widget = QWidget()
+        widget.setLayout(pageLayout)
+        self.setCentralWidget(widget)
+
+    def activateTab1(self):
+        self.stackLayout.setCurrentIndex(0)
+    
+    def activateTab2(self):
+        self.stackLayout.setCurrentIndex(1)
+
+    def activateTab3(self):
+        self.stackLayout.setCurrentIndex(2)
 
 
 
