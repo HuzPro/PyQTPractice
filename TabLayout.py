@@ -37,14 +37,14 @@ class MainWindow(QMainWindow):
         self.stackLayout.addWidget(Color("red"))
 
         greenButton = QPushButton("Green")
-        redButton.pressed.connect(self.activateTab1)
+        greenButton.pressed.connect(self.activateTab2)
         buttonLayout.addWidget(greenButton)
         self.stackLayout.addWidget(Color("green"))
 
-        greenButton = QPushButton("Green")
-        redButton.pressed.connect(self.activateTab1)
-        buttonLayout.addWidget(greenButton)
-        self.stackLayout.addWidget(Color("green"))
+        yellowButton = QPushButton("Yellow")
+        yellowButton.pressed.connect(self.activateTab3)
+        buttonLayout.addWidget(yellowButton)
+        self.stackLayout.addWidget(Color("yellow"))
 
 
 
