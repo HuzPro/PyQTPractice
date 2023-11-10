@@ -24,7 +24,7 @@ class MainWindow(QMainWindow):
         self.setWindowIcon(QIcon("icons\\tab.png"))
         self.setMinimumSize(720, 480)
 
-        pageLayout = QVBoxLayout()
+        """pageLayout = QVBoxLayout()
         buttonLayout = QHBoxLayout()
         self.stackLayout = QStackedLayout()
 
@@ -49,6 +49,17 @@ class MainWindow(QMainWindow):
         widget = QWidget()
         widget.setLayout(pageLayout)
         self.setCentralWidget(widget)
+"""
+        #alternate method:
+        tabs = QTabWidget()
+        tabs.setTabPosition(QTabWidget.TabPosition.North)
+        tabs.setMovable(True)
+
+        for n, color in enumerate(["Red", "Green", "Blue"]):
+            tabs.addTab(Color(color), color)
+        
+        self.setCentralWidget(tabs)
+
 
     def activateTab1(self):
         self.stackLayout.setCurrentIndex(0)
