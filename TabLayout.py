@@ -1,6 +1,6 @@
-from PyQt6.QtWidgets import *
-from PyQt6.QtGui import *
-from PyQt6.QtCore import *
+from PyQt6.QtWidgets import QWidget, QMainWindow, QApplication, QVBoxLayout, QHBoxLayout, QStackedLayout, QPushButton, QTabWidget
+from PyQt6.QtGui import QPalette, QColor, QIcon
+from PyQt6.QtCore import QSize
 from ctypes import windll
 
 myappid = u'mycompany.myproduct.subproduct.version'
@@ -22,9 +22,9 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle("Tab View")
         self.setWindowIcon(QIcon("icons\\tab.png"))
-        self.setMinimumSize(720, 480)
+        self.setMinimumSize(QSize(720, 480))
 
-        """pageLayout = QVBoxLayout()
+        """ pageLayout = QVBoxLayout()
         buttonLayout = QHBoxLayout()
         self.stackLayout = QStackedLayout()
 
@@ -48,8 +48,8 @@ class MainWindow(QMainWindow):
 
         widget = QWidget()
         widget.setLayout(pageLayout)
-        self.setCentralWidget(widget)
-"""
+        self.setCentralWidget(widget) """
+
         #alternate method:
         tabs = QTabWidget()
         tabs.setTabPosition(QTabWidget.TabPosition.North)
@@ -59,7 +59,6 @@ class MainWindow(QMainWindow):
             tabs.addTab(Color(color), color)
         
         self.setCentralWidget(tabs)
-
 
     def activateTab1(self):
         self.stackLayout.setCurrentIndex(0)
