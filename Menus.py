@@ -17,19 +17,23 @@ class MainWindow(QMainWindow):
         menu = self.menuBar()
 
         exitProgram = QAction("&Exit", self)
+        exitProgram.setShortcut(QKeySequence("Ctrl+e"))
         exitProgram.triggered.connect(exit)
 
         fileMenu = menu.addMenu("&File")
         fileMenu.addAction(exitProgram)
 
         print1 = QAction(QIcon("icons//Icon.png"), "&Print 1", self)
+        print1.setShortcut(QKeySequence("Ctrl+1"))
         print1.triggered.connect(self.Print1)
 
         print2 = QAction(QIcon("icons//Icon2.png"), "&Print 2", self)
+        print2.setShortcut(QKeySequence("Ctrl+2"))
         print2.triggered.connect(self.Print2)
 
         runMenu = menu.addMenu("&Run")
-        runMenu.addActions([print1, print2])
+        printOptions = runMenu.addMenu("Print Options")
+        printOptions.addActions([print1, print2])
 
 
 
