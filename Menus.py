@@ -1,6 +1,6 @@
-from PyQt6.QtWidgets import *
-from PyQt6.QtGui import *
-from PyQt6.QtCore import *
+from PyQt6.QtWidgets import QMainWindow, QApplication
+from PyQt6.QtGui import QIcon, QAction, QKeySequence
+from PyQt6.QtCore import QSize
 from ctypes import windll
 
 myappid = u'mycompany.myproduct.subproduct.version'
