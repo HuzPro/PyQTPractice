@@ -7,7 +7,7 @@ myappid = u'mycompany.myproduct.subproduct.version'
 windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 
 class customDialog(QDialog):
-    def __init__(self):
+    def __init__(self, parent=None):
         super().__init__()
 
         self.setWindowTitle("HELLO! IT'S A DIALOG WINDOW")
@@ -32,16 +32,23 @@ class MainWindow(QMainWindow):
         self.setMinimumSize(QSize(600,400))
         self.setWindowIcon(QIcon("icons//Icon.png"))
 
-        button = QPushButton("The Dialog button")
+        button = QPushButton("Dialog Box")
         button.clicked.connect(self.buttonClicked)
         button.setFixedSize(QSize(130,25))
+
+        button = QPushButton("Simple Dialog")
+        button.clicked.connect(slef.)
+        button.setFixedSize(QSize(130,25))
+
+        layout = QVBoxLayout()
+        layout.addWidget(button)
         
         self.setCentralWidget(button)
 
     def buttonClicked(self, s):
         print(s, "Button Pressed")
 
-        dlg = customDialog()
+        dlg = customDialog(self)
         if dlg.exec():
             print("It worked!")
         else:
